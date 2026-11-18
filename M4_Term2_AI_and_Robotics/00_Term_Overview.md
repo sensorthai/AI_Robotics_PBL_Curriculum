@@ -1,7 +1,7 @@
 # ม.4 ภาคเรียนที่ 2: AI & Robotics (40 คาบ)
 
 **คำอธิบายรายวิชา:** พื้นฐาน AI วงจรไฟฟ้า และหุ่นยนต์  
-**เครื่องมือ/อุปกรณ์:** ESP32 (หรือ Arduino) + MicroPython, breadboard, LED, ปุ่ม, ตัวต้านทาน, มัลติมิเตอร์, เซนเซอร์ (ultrasonic, LDR, DHT, IR), มอเตอร์ DC/เซอร์โว, ไดรเวอร์มอเตอร์, ชุดแชสซีหุ่นยนต์, Teachable Machine, scikit-learn (ชุดอุปกรณ์ 1 ชุดต่อ 2 คน)
+**เครื่องมือ/อุปกรณ์:** ESP32-S3-S3 DevKitC-1 N16R8 (30 บอร์ด, USB-C, MicroPython), Breadboard 830 Point, สาย Jumper, LED/R/Diode, Button & Buzzer, Sensor Basic Kit (LDR, IR, Ultrasonic HC-SR04), OLED I2C 0.96", Power Module 5V, Digital Multimeter, 4WD Aluminum Robot Chassis, DC Gear Motor 6V–12V, TB6612FNG Motor Driver, Servo SG90, Wheel Encoder, Battery 18650 + Charging Module, JupyterHub (PyTorch/scikit-learn บน AI Server), Bambu Lab A1 Mini (3D Printer)
 
 ---
 
@@ -11,13 +11,13 @@
 |---|---|---|---|
 | 1 | แยกแยะ AI, ML และ DL ในชีวิตจริง | ความสัมพันธ์แบบซ้อนชั้น AI > ML > DL | แผนภาพจับคู่และวิเคราะห์แอป AI รอบตัว 6 ระบบ |
 | 2 | AI แบบกฎ (Rule-based) vs เรียนรู้จากข้อมูล | ระบบ `if-else` เทียบกับโมเดล ML | โปรแกรมทายผลแบบ Rule-based และตารางเทียบกับ ML |
-| 3 | องค์ประกอบ ML และทดลอง Teachable Machine | ข้อมูล โมเดล การเรียนรู้ การทำนาย (Train/Test) | โมเดล Teachable Machine จำแนก 3 ท่าทาง/วัตถุ |
+| 3 | องค์ประกอบ ML และทดลอง ชุดฝึกโมเดลจำแนกบน JupyterHub (PyTorch / scikit-learn) | ข้อมูล โมเดล การเรียนรู้ การทำนาย (Train/Test) | โมเดล ชุดฝึกโมเดลจำแนกบน JupyterHub (PyTorch / scikit-learn) จำแนก 3 ท่าทาง/วัตถุ |
 | 4 | งาน ML และวงจรหุ่นยนต์ (Sense-Think-Act) | งานจำแนก/ทำนาย/จัดกลุ่ม และวงจรรับรู้-ตัดสินใจ-ลงมือทำ | พิมพ์เขียวระบบหุ่นยนต์ในฝัน (Sense-Think-Act) |
 | 5 | ข้อจำกัดและความเสี่ยงของ AI ต่อยอดจาก Ethics | ความเสี่ยง AI ในโลกจริงและการประเมินผล | การ์ดประเมินความเสี่ยงระบบ AI/หุ่นยนต์ + ทดสอบย่อย |
 | 6 | ความปลอดภัยไฟฟ้าและกฎของโอห์ม | แรงดัน กระแส ความต้านทาน กฎของโอห์ม และมัลติมิเตอร์ | ตารางวัดค่าและคำนวณวงจรด้วยมัลติมิเตอร์จริง |
 | 7 | อุปกรณ์อิเล็กทรอนิกส์พื้นฐานและ Breadboard | ตัวต้านทาน LED ปุ่มกด และโครงสร้างรางต่อ Breadboard | วงจรไฟฉาย LED ปรับค่าความต้านทานบน Breadboard |
 | 8 | อ่านแบบวงจรและต่อวงจรควบคุมด้วยปุ่ม | สัญลักษณ์วงจรไฟฟ้าและการต่อสวิตช์อนุกรม/ขนาน | วงจร LED ควบคุมด้วยปุ่มกดตามแบบวงจรมาตรฐาน |
-| 9 | รู้จัก ESP32, ขา GPIO และ MicroPython | โครงสร้างบอร์ด ESP32 การตั้งค่า MicroPython | โปรแกรมแรกบน ESP32 (Blink Onboard LED + Serial) |
+| 9 | รู้จัก ESP32-S3, ขา GPIO และ MicroPython | โครงสร้างบอร์ด ESP32-S3-S3 DevKitC-1 N16R8 การตั้งค่า MicroPython | โปรแกรมแรกบน ESP32-S3 (Blink Onboard LED + Serial) |
 | 10 | Digital Output: ควบคุม LED หลายดวง | `Pin.OUT`, `.value(1/0)` และจังหวะเวลา | วงจรและโค้ดไฟจราจรจำลอง 3 สี |
 | 11 | Digital Input: อ่านปุ่มกดและกันสัญญาณเด้ง | `Pin.IN`, Pull-up/Pull-down และ Debounce | สวิตช์อัจฉริยะกดติด-กดดับ (Toggle) ไร้สัญญาณเด้ง |
 | 12 | Analog Input: อ่านค่าแสง/ตัวต้านทานปรับค่าได้ | ADC (Analog-to-Digital) อ่านค่า LDR/Potentiometer | เครื่องวัดระดับแสง/ความสว่างแบบเรียลไทม์ |
@@ -40,8 +40,8 @@
 | 29 | ทดสอบ แก้ปัญหา และความปลอดภัยระบบหุ่นยนต์ | การไล่บั๊กฮาร์ดแวร์-ซอฟต์แวร์และการป้องกันอันตราย | รายงานบั๊กและวิธีแก้ + หุ่นยนต์ที่เสถียรพร้อมใช้งาน |
 | 30 | ขั้นตอน Machine Learning (ML Workflow) | ข้อมูล → ฟีเจอร์ → โมเดล → ประเมินผล | แผนภาพ ML Workflow สำหรับโจทย์เซนเซอร์ของทีม |
 | 31 | เก็บและเตรียมข้อมูลเซนเซอร์/ภาพ (3 คลาส) | การเก็บตัวอย่างที่สมดุลและการติดป้ายกำกับ (Labeling) | ชุดข้อมูลฝึกสอน 3 คลาสที่สะอาดและสมดุล |
-| 32 | Teachable Machine: เทรนโมเดลจำแนกภาพ/เสียง/ท่าทาง | การฝึกโมเดลและทดสอบความมั่นใจ (Confidence) | โมเดล Teachable Machine 3 คลาสที่ทดสอบแม่นยำ |
-| 33 | เชื่อมผล Teachable Machine ไปสั่งงานอุปกรณ์ | การส่งผลทำนายผ่าน Serial/Web ไปคุม ESP32/LED/Servo | ระบบ AI ควบคุมอุปกรณ์จริง (เช่น ชูมือเปิดไฟ/แยกขยะ) |
+| 32 | ชุดฝึกโมเดลจำแนกบน JupyterHub (PyTorch / scikit-learn): เทรนโมเดลจำแนกภาพ/เสียง/ท่าทาง | การฝึกโมเดลและทดสอบความมั่นใจ (Confidence) | โมเดล ชุดฝึกโมเดลจำแนกบน JupyterHub (PyTorch / scikit-learn) 3 คลาสที่ทดสอบแม่นยำ |
+| 33 | เชื่อมผล ชุดฝึกโมเดลจำแนกบน JupyterHub (PyTorch / scikit-learn) ไปสั่งงานอุปกรณ์ | การส่งผลทำนายผ่าน Serial/Web ไปคุม ESP32-S3/LED/Servo | ระบบ AI ควบคุมอุปกรณ์จริง (เช่น ชูมือเปิดไฟ/แยกขยะ) |
 | 34 | scikit-learn เบื้องต้น: Decision Tree กับข้อมูลเซนเซอร์ | การโหลด CSV ข้อมูลเซนเซอร์และเทรน Decision Tree | โมเดล Decision Tree จำแนกสถานะจากข้อมูลเซนเซอร์ |
 | 35 | scikit-learn เบื้องต้น: k-NN และเปรียบเทียบโมเดล | อัลกอริทึม k-Nearest Neighbors (k-NN) | สคริปต์เปรียบเทียบความแม่นยำ Decision Tree vs k-NN |
 | 36 | วัดผลโมเดล, Overfitting และ Confusion Matrix | Accuracy, Overfitting และตารางทายถูก-ทายผิด | ใบงานวิเคราะห์ Confusion Matrix และแก้ Overfitting |
@@ -54,6 +54,6 @@
 
 ## โครงงานรวบยอดประจำภาคเรียน
 **ต้นแบบอุปกรณ์อัจฉริยะหรือหุ่นยนต์อย่างง่าย 1 ชิ้น** (ใช้เซนเซอร์ ≥ 1 ตัว + ตรรกะหรือ ML):
-- ต่อยอด **MicroPython** จาก Python (ม.4/1) บนบอร์ด **ESP32** (คาบ 9–17)
+- ต่อยอด **MicroPython** จาก Python (ม.4/1) บนบอร์ด **ESP32-S3** (คาบ 9–17)
 - ผสานระบบขับเคลื่อน/กลไกจาก **Robotics Engineering** (คาบ 18–29)
-- เพิ่มความฉลาดด้วย **Machine Learning / Teachable Machine / scikit-learn** (คาบ 30–36) จนเป็นชิ้นงานสาธิตใน **Demo Day (คาบ 37–40)**
+- เพิ่มความฉลาดด้วย **Machine Learning / ชุดฝึกโมเดลจำแนกบน JupyterHub (PyTorch / scikit-learn) / scikit-learn** (คาบ 30–36) จนเป็นชิ้นงานสาธิตใน **Demo Day (คาบ 37–40)**

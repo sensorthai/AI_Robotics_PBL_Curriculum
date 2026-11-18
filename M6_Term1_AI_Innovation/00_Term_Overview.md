@@ -1,7 +1,7 @@
 # ม.6 ภาคเรียนที่ 1: AI Innovation (40 คาบ)
 
 **คำอธิบายรายวิชา:** AI สำหรับธุรกิจและโครงงานนวัตกรรม  
-**เครื่องมือ/อุปกรณ์:** Google Workspace, GitHub, Trello/บอร์ดงาน, Canva/โปรแกรมทำสไลด์, ชุดอุปกรณ์และเครื่องมือ AI ตามโจทย์ของแต่ละทีม
+**เครื่องมือ/อุปกรณ์:** AI Server (Ollama + Open WebUI, JupyterHub, PyTorch, OpenCV, Label Studio, Local Git Server), NAS Storage, บอร์ดงาน (Kanban บน Local Server/Trello `[เสริม]`), โปรแกรมเอกสาร/สไลด์ (LibreOffice/Markdown `[เสริม]`), Bambu Lab A1 Mini (3D Printer), ชุดอุปกรณ์ ESP32-S3-S3 / Robotics / Vision / IoT ตามโจทย์ของแต่ละทีม
 
 ---
 
@@ -12,8 +12,8 @@
 | 1 | ตัวอย่างการใช้ AI ในธุรกิจ 4 กลุ่มอุตสาหกรรม | AI ในเกษตร ค้าปลีก บริการ และการศึกษา | แผ่นสรุปวิเคราะห์กรณีศึกษาธุรกิจ AI 4 กลุ่ม |
 | 2 | ปัญหาแบบใดที่เหมาะกับ AI (AI Suitability) | เกณฑ์ประเมินปัญหาที่ควรใช้ AI vs ไม่ควรใช้ AI | ตารางคัดกรองปัญหา 3 โจทย์ด้วย AI Suitability Matrix |
 | 3 | วิเคราะห์โจทย์จริงและทางเลือกที่ไม่ใช่ AI | Rule-based/Human-in-the-loop เทียบกับ AI | เอกสารตัดสินใจเลือกปัญหาที่เหมาะสมสำหรับโครงงาน |
-| 4 | Value Proposition Canvas (VPC) เบื้องต้น | Customer Profile (Jobs/Pains/Gains) & Value Map | Value Proposition Canvas ของโครงงานทีม |
-| 5 | Business Model Canvas (BMC) เบื้องต้น | 9 ช่องโมเดลธุรกิจเพื่อความยั่งยืนของนวัตกรรม | Business Model Canvas ฉบับร่างของโครงงาน |
+| 4 | Value Proposition โปรแกรมออกแบบออฟไลน์ (LibreOffice Impress / Draw.io) [เสริม]s (VPC) เบื้องต้น | Customer Profile (Jobs/Pains/Gains) & Value Map | Value Proposition โปรแกรมออกแบบออฟไลน์ (LibreOffice Impress / Draw.io) [เสริม]s ของโครงงานทีม |
+| 5 | Business Model โปรแกรมออกแบบออฟไลน์ (LibreOffice Impress / Draw.io) [เสริม]s (BMC) เบื้องต้น | 9 ช่องโมเดลธุรกิจเพื่อความยั่งยืนของนวัตกรรม | Business Model โปรแกรมออกแบบออฟไลน์ (LibreOffice Impress / Draw.io) [เสริม]s ฉบับร่างของโครงงาน |
 | 6 | ต้นทุน–ผลประโยชน์และประมาณต้นทุนต้นแบบ | Cost-Benefit Analysis และต้นทุนฮาร์ดแวร์/คลาวด์ | ตารางประมาณการต้นทุนต้นแบบและจุดคุ้มทุนเบื้องต้น |
 | 7 | จริยธรรมและความเสี่ยงของ AI ในธุรกิจ | ความรับผิดชอบ อคติ กฎหมาย/PDPA และผลกระทบ | การ์ดวิเคราะห์ความเสี่ยงจริยธรรมทางธุรกิจ 2 กรณี |
 | 8 | วิเคราะห์กรณีศึกษาธุรกิจ AI ฉบับสมบูรณ์ | การสังเคราะห์เทคโนโลยี ธุรกิจ และจริยธรรม | รายงานวิเคราะห์กรณีศึกษาธุรกิจ AI 1 ฉบับ |
@@ -25,10 +25,10 @@
 | 14 | ตั้งทีม 2–4 คน กำหนดบทบาท และเลือกหัวข้อ | การจัดทีม Cross-functional และ Team Charter | ใบจัดทีมและข้อตกลงบทบาทหน้าที่ของสมาชิก |
 | 15 | เขียน Problem Statement เป้าหมาย ขอบเขต เกณฑ์สำเร็จ | การกำหนดขอบเขตไม่ให้บานปลาย (Scope Control) | เอกสาร Project Charter / ร่างโครงงาน 1 หน้า |
 | 16 | ออกแบบสถาปัตยกรรมระบบ/โมเดล ข้อมูล และอุปกรณ์ | System Architecture, Tech Stack, Dataset/Hardware | ผังสถาปัตยกรรมระบบ Capstone ของทีม |
-| 17 | แผนงาน (Kanban/Gantt) ความเสี่ยง และงบประมาณ | การวางแผน Agile/Milestone และแผนรับมือความเสี่ยง | บอร์ดงาน (Trello/GitHub Projects) + ตารางความเสี่ยง-งบ |
+| 17 | แผนงาน (Kanban/Gantt) ความเสี่ยง และงบประมาณ | การวางแผน Agile/Milestone และแผนรับมือความเสี่ยง | บอร์ดงาน (Trello/Local Git Server (Projects/Issues)) + ตารางความเสี่ยง-งบ |
 | 18 | พิสูจน์ความเป็นไปได้ขั้นต่ำ (Proof-of-Concept) | การทดสอบแกนเทคนิคที่เสี่ยงที่สุดในขนาดเล็ก | PoC ที่ทำงานได้จริง 1 ชิ้น (เช่น โมเดล/เซนเซอร์จุดเสี่ยง) |
 | 19 | นำเสนอ Proposal ต่อครู/คณะกรรมการ | การสื่อสารแผนโครงงานและรับข้อเสนอแนะ | สไลด์ Proposal + เอกสารรับข้อเสนอแนะเพื่ออนุมัติ |
-| 20 | Sprint 0: ตั้ง GitHub Repo, บอร์ดงาน และเป้า Sprint | Version Control (Git/GitHub) และ Sprint Planning | GitHub Repository + บอร์ดงานที่ตั้งเป้า Sprint 1 แล้ว |
+| 20 | Sprint 0: ตั้ง Local Git Repo, บอร์ดงาน และเป้า Sprint | Version Control (Git/Local Git Server) และ Sprint Planning | Local Git Repository + บอร์ดงานที่ตั้งเป้า Sprint 1 แล้ว |
 | 21 | Sprint 1 (1/4): เตรียมข้อมูลและโครงสร้างโค้ด/วงจร | การวางโครงสร้างโปรเจกต์และรวบรวมข้อมูล/อุปกรณ์ | โครงสร้าง Repo + ชุดข้อมูล/วงจรฐาน (Commit แรก) |
 | 22 | Sprint 1 (2/4): พัฒนาส่วนแกนหลัก (Data/Sensor Core) | การเขียนโมดูลรับข้อมูล/ประมวลผลหลัก | โมดูลแกนรับข้อมูล/เตรียมข้อมูลที่รันได้จริง |
 | 23 | Sprint 1 (3/4): พัฒนาและทดสอบส่วนแกน (Core Logic) | การเชื่อมต่อข้อมูลเข้าตรรกะ/โมเดลตั้งต้น | ส่วนแกนระบบที่ทำงานได้ตามเป้าขั้นต่ำ |

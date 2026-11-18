@@ -1,65 +1,56 @@
-# หลักสูตร AI & Robotics (ม.4 – ม.6) รูปแบบ Project-Based Learning (PBL)
+# หลักสูตร AI & Robotics (ม.4 – ม.6) รูปแบบ Project-Based Learning (PBL) — ฉบับ Local AI 100%
 
-เอกสารฉบับนี้แตกแผนการสอนจากเอกสารต้นฉบับ *"แผนการสอนอย่างละเอียด หลักสูตร AI & Robotics (ม.4 – ม.6)"* (6 ภาคเรียน • 30 หัวข้อ • 240 คาบ) ออกเป็นแผนการสอนรายคาบแบบ **Project-Based Learning (PBL)** โดยทุกคาบจบด้วย **"โครงงานปลายคาบ"** ที่ผู้เรียนได้ลงมือสร้างชิ้นงานที่ใช้งานได้จริง และต่อยอดสะสมเป็นโครงงานรวบยอดในแต่ละภาคเรียนจนถึงโครงงานนวัตกรรมระดับชั้น ม.6
+เอกสารฉบับนี้แตกแผนการสอนจากหลักสูตร **AI & Robotics (ม.4 – ม.6)** (6 ภาคเรียน • 30 หัวข้อ • 240 คาบ) โดยปรับแก้ให้ใช้ **เครื่องมือและโครงสร้างพื้นฐานตามเอกสาร BOQ ภายในโรงเรียน (Local AI 100%)** ทั้งหมด ไม่พึ่งพา Cloud AI หรือบริการคลาวด์ภายนอก
 
 ---
 
-## 1. สมมติฐานในการออกแบบหลักสูตร (Assumptions)
+## 1. สมมติฐานและสถาปัตยกรรมเครื่องมือ (อ้างอิงเอกสาร BOQ โรงเรียน)
 
-อ้างอิงจากเอกสารต้นฉบับและข้อกำหนดของการออกแบบ PBL:
-1. **เวลาเรียนต่อคาบ:** 1 คาบ = **50 นาที** ตามที่ระบุในเอกสารต้นฉบับ (40 คาบต่อภาคเรียน ≈ 2 คาบต่อสัปดาห์ ประมาณ 20 สัปดาห์ เป็นคาบสอนสุทธิ ยังไม่หักวันหยุด สอบ หรือกิจกรรมโรงเรียน)
-2. **สัดส่วนเวลาโครงงานปลายคาบ (≥ 40%):** กำหนดให้ช่วง **"โครงงานปลายคาบ"** ใช้เวลา **20–25 นาที (40%–50% ของคาบ 50 นาที)** โดยจำกัดช่วงเปิดคาบ/ทบทวน บรรยาย/สาธิต และฝึกปฏิบัติแบบมีผู้ช่วยให้อยู่ในช่วง 25–30 นาทีแรก (สอดคล้องกับสัดส่วน บรรยาย : ปฏิบัติ ประมาณ 30 : 70 ในเอกสาร)
-3. **พื้นฐานผู้เรียน:** ผู้เรียนเริ่มชั้น ม.4 ภาคเรียนที่ 1 โดย **ไม่มีพื้นฐานการเขียนโปรแกรมและอิเล็กทรอนิกส์**
-4. **ทรัพยากรห้องเรียนและอุปกรณ์:**
-   - ห้องเรียนมีคอมพิวเตอร์ 1 เครื่องต่อผู้เรียน 1 คน พร้อมอินเทอร์เน็ตเสถียร
-   - ชุดฮาร์ดแวร์จัดเป็น **1 ชุดต่อผู้เรียน 2 คน** (ภาคเรียนที่ใช้ฮาร์ดแวร์ควรมีผู้ช่วยสอน 1 คนต่อห้อง)
-   - ใช้ **MicroPython บน ESP32** ตั้งแต่ ม.4 ภาคเรียนที่ 2 เพื่อต่อยอด Python จาก ม.4 ภาคเรียนที่ 1 โดยไม่ต้องเรียนภาษาใหม่
-   - ระดับ ม.5 ภาคเรียนที่ 1 (Deep Learning) เน้นแนวคิดและการใช้ไลบรารีระดับสูงบน GPU (เช่น Google Colab) ไม่ลงคณิตศาสตร์เชิงลึก
-5. **การต่อยอดคาบที่เป็นกลุ่ม (Multi-period blocks):** ในเอกสารต้นฉบับมีการจัดกลุ่มคาบต่อเนื่อง (เช่น คาบที่ 10–11, 17–18, 21–22) แผนนี้ได้แตกออกเป็น **รายคาบย่อยทีละคาบ (คาบที่ 1 ถึง 40 ของทุกภาคเรียน)** เพื่อให้ทุกคาบมีเป้าหมายย่อยและชิ้นงานที่ใช้งานได้จริงจบใน 50 นาที ไม่ต้องรอจบหลายคาบจึงจะได้เห็นผลลัพธ์
-6. **การเสริมเนื้อหาภายนอก:** เนื้อหาแกนหลักอ้างอิงจากเอกสารต้นฉบับทั้งหมด หากมีการระบุเครื่องมือ ตัวอย่าง หรือขั้นตอนทางเทคนิคเพิ่มเติมเพื่อให้โครงงานจบได้ในคาบ จะทำเครื่องหมาย **`[เสริม]`** กำกับไว้ชัดเจน
+1. **เวลาเรียนต่อคาบ:** 1 คาบ = **50 นาที** (40 คาบ/ภาคเรียน) โดยช่วง **"โครงงานปลายคาบ"** ใช้เวลา **≥ 40% ของคาบ (20–45 นาที)**
+2. **จำนวนผู้เรียนและรูปแบบกลุ่ม:** ผู้เรียน **30 คน** แบ่งเป็น **5 กลุ่มปฏิบัติการหลัก** (จัดเตรียมชุดอุปกรณ์กลุ่มไว้ **6 ชุด** สำหรับ 5 กลุ่ม + 1 ชุดครู/สำรอง) ผู้เรียนมี Notebook หรือ Tablet ส่วนตัว
+3. **โครงสร้าง Local AI 100% (ไม่ส่งข้อมูลออก Cloud AI):**
+   - **AI Server ส่วนกลาง (1 ระบบ):** AMD Ryzen 9 7900, RAM DDR5 128GB, SSD NVMe 2TB, GPU **NVIDIA RTX 3090 24GB** รันบน **Ubuntu Server 24.04 LTS + Docker**
+   - **ซอฟต์แวร์บน AI Server:** **Ollama** (Local LLM ขนาด 7B–14B Quantized) + **Open WebUI** (หน้า Chat AI), **JupyterHub** (เขียน Python/DL), **PyTorch**, **OpenCV**, **Label Studio** (ติดป้าย Dataset), **Local Git Server** (เก็บ Source Code)
+   - **การจัดคิวใช้งาน GPU/LLM:** เนื่องจาก RTX 3090 24GB รองรับ LLM 7B–14B ได้ดีแต่ไม่เหมาะให้ 30 คนยิงพร้อมกัน จึงใช้วิธี **แบ่ง 5–6 กลุ่มและจัดคิวงาน**
+   - **NAS Storage (Synology DS223j + 8TB x 2):** เก็บ Dataset, Source Code, Model, ภาพ/วิดีโอ และสำรองข้อมูลทุกวัน
+   - **Network Infrastructure:** Managed Switch + Wi-Fi 6 AP (Dual Band) แยก **VLAN ระหว่าง นักเรียน / AI Server / อุปกรณ์ IoT** พร้อม Firewall
+4. **ชุดอุปกรณ์ฮาร์ดแวร์ตลอด 3 ปี:**
+   - **บอร์ดหลักประจำตัว (30 ชุด):** **ESP32-S3 DevKitC-1 N16R8** (1 บอร์ด/คน) พร้อม Breadboard 830 Point, สาย Jumper, LED/R/Diode, Button & Buzzer, สาย USB-C Data, และชุดกลุ่ม (Sensor Basic: LDR/IR/Ultrasonic, **OLED I2C 0.96"**, Power Module 5V)
+   - **Robotics Kit (6 ชุด):** **4WD Aluminum Chassis**, DC Gear Motor 6V–12V (4 ตัว/คัน), **TB6612FNG Motor Driver**, Ultrasonic HC-SR04, Servo SG90, **Wheel Encoder**, แบตเตอรี่ 18650 + Charging Module, สนามทดสอบ
+   - **AI Vision Kit (6 ชุด):** **Webcam Logitech C270**, Tripod, ไฟ LED ถ่ายภาพ, Background Board, สายต่อ USB, Object Sample Kit, External SSD
+   - **IoT & Smart Systems Kit (6 ชุด):** **Capacitive Soil Moisture**, **DHT22/AM2302**, **Water Level Sensor**, **Rain Sensor**, **2-Channel Relay**, **DC Water Pump 5V–12V**, OLED I2C, 12V DC Power Supply, ถังทดลอง+สายยาง, กล่องกันน้ำ (Enclosure)
+   - **3D Printing (1 เครื่อง):** **Bambu Lab A1 Mini** + PLA Filament สำหรับพิมพ์กล่อง ESP32, ชิ้นส่วนหุ่นยนต์, Sensor Housing, IoT Enclosure และต้นแบบผลิตภัณฑ์
+   - **เครื่องมือช่างและความปลอดภัย:** Soldering Station (ครูควบคุมเท่านั้น พร้อมแว่นตานิรภัยและ Fume Extractor), Multimeter, DC Power Supply, Hot Glue Gun
 
 ---
 
 ## 2. ภาพรวมหลักสูตร 6 ภาคเรียน (240 คาบ)
 
-| ระดับชั้น/ภาคเรียน | ชื่อภาคเรียน | หัวข้อหลัก (จำนวนคาบ) | โครงงานรวบยอดประจำภาค | ไฟล์แผนการสอน |
+| ระดับชั้น/ภาคเรียน | ชื่อภาคเรียน | เครื่องมือหลักตาม BOQ | โครงงานรวบยอดประจำภาค | ไฟล์แผนการสอน |
 |---|---|---|---|---|
-| **ม.4 ภาคเรียนที่ 1** | AI Foundation | 1. Prompt Engineering (5)<br>2. AI Ethics (3)<br>3. Data Literacy (8)<br>4. Python Programming (20)<br>5. Mini Project (4) | โปรแกรม Python วิเคราะห์ข้อมูล/คำนวณใช้งานจริง พร้อมเอกสารกติกา AI และชุดข้อมูล CSV ของห้อง | [M4_Term1 Overview](M4_Term1_AI_Foundation/00_Term_Overview.md) |
-| **ม.4 ภาคเรียนที่ 2** | AI & Robotics | 1. Fundamentals of AI (5)<br>2. Electronic Circuits & Sensors (12)<br>3. Robotics Engineering (12)<br>4. Intro to Machine Learning (7)<br>5. Mini Project (4) | ต้นแบบอุปกรณ์อัจฉริยะหรือหุ่นยนต์อย่างง่าย (ใช้เซ็นเซอร์ ≥ 1 ตัว + ตรรกะหรือ ML) | [M4_Term2 Overview](M4_Term2_AI_and_Robotics/00_Term_Overview.md) |
-| **ม.5 ภาคเรียนที่ 1** | AI Vision | 1. Machine Learning Review (5)<br>2. Deep Learning (12)<br>3. Image Processing (6)<br>4. Computer Vision (12)<br>5. Mini Project (5) | ระบบ AI จำแนกภาพ/ตรวจจับวัตถุใช้งานจริง (เช่น แยกประเภทขยะจากภาพถ่าย) | [M5_Term1 Overview](M5_Term1_AI_Vision/00_Term_Overview.md) |
-| **ม.5 ภาคเรียนที่ 2** | AIoT & Smart Systems | 1. IoT Fundamentals (6)<br>2. AIoT Systems (12)<br>3. Applied Machine Learning (8)<br>4. Smart System Integration (8)<br>5. Mini Project (6) | ระบบ Smart Farm / Smart Classroom / Smart Environment ครบวงจร | [M5_Term2 Overview](M5_Term2_AIoT_Smart_Systems/00_Term_Overview.md) |
-| **ม.6 ภาคเรียนที่ 1** | AI Innovation | 1. AI for Business (8)<br>2. Design Thinking & Problem Solving (5)<br>3. Capstone Project Planning (6)<br>4. Capstone Project Development (18)<br>5. Project Review (3) | Capstone Project ฉบับต้นแบบที่ใช้งานได้จริง พร้อมรายงานการพัฒนา (Sprint 0–3) | [M6_Term1 Overview](M6_Term1_AI_Innovation/00_Term_Overview.md) |
-| **ม.6 ภาคเรียนที่ 2** | Future AI Entrepreneur | 1. Entrepreneurship (8)<br>2. Professional Skills (5)<br>3. AI Product & Business Pitching (6)<br>4. Capstone Project Finalization (14)<br>5. Portfolio & Final Presentation (7) | Capstone Project ฉบับสมบูรณ์ พร้อม Lean Canvas, Portfolio และ Final Pitching | [M6_Term2 Overview](M6_Term2_Future_AI_Entrepreneur/00_Term_Overview.md) |
+| **ม.4 ภาคเรียนที่ 1** | AI Foundation | Notebook/Tablet, AI Server (Ollama + Open WebUI, JupyterHub), NAS, ESP32-S3 | โปรแกรม Python บน JupyterHub วิเคราะห์ CSV ของห้อง เก็บบน NAS/Local Git | [M4_Term1 Overview](M4_Term1_AI_Foundation/00_Term_Overview.md) |
+| **ม.4 ภาคเรียนที่ 2** | AI & Robotics | ESP32-S3 N16R8, OLED, Sensor Kit, 4WD Robot Kit (TB6612FNG, Encoder), JupyterHub (PyTorch/sklearn), 3D Printer | หุ่นยนต์ 4WD / อุปกรณ์อัจฉริยะ ESP32-S3 (เซนเซอร์/Encoder + ตรรกะ/ML) | [M4_Term2 Overview](M4_Term2_AI_and_Robotics/00_Term_Overview.md) |
+| **ม.5 ภาคเรียนที่ 1** | AI Vision | AI Server (JupyterHub, PyTorch, OpenCV, Label Studio, RTX 3090), Webcam C270 + Lighting/Board, NAS | ระบบ AI Vision (PyTorch/YOLO/OpenCV) จำแนกภาพ/ตรวจจับวัตถุเรียลไทม์บน LAN | [M5_Term1 Overview](M5_Term1_AI_Vision/00_Term_Overview.md) |
+| **ม.5 ภาคเรียนที่ 2** | AIoT & Smart Systems | ESP32-S3, DHT22, Soil/Water/Rain Sensors, 2-Ch Relay, Pump, Docker (MQTT/Dashboard บน AI Server), NAS, 3D Printer | ระบบ Smart Farm / Smart Classroom ครบวงจรบน IoT VLAN พร้อม 3D Enclosure | [M5_Term2 Overview](M5_Term2_AIoT_Smart_Systems/00_Term_Overview.md) |
+| **ม.6 ภาคเรียนที่ 1** | AI Innovation | AI Server, Local Git Server, NAS, Bambu Lab A1 Mini 3D Printer, อุปกรณ์ทุกหมวด | Capstone Project ฉบับต้นแบบ (Local AI 100%) พร้อมรายงานการพัฒนา (Sprint 0–3) | [M6_Term1 Overview](M6_Term1_AI_Innovation/00_Term_Overview.md) |
+| **ม.6 ภาคเรียนที่ 2** | Future AI Entrepreneur | Local Git Server, NAS, AI Server, Bambu Lab A1 Mini 3D Printer, อุปกรณ์ทุกหมวด | Capstone Project ฉบับสมบูรณ์, Lean Canvas, Portfolio และ Final Presentation | [M6_Term2 Overview](M6_Term2_Future_AI_Entrepreneur/00_Term_Overview.md) |
 
 ---
 
 ## 3. โครงงานรวบยอดตลอดหลักสูตร (Cumulative Capstone Architecture)
 
-หลักสูตรออกแบบเป็น **บันไดทักษะ 3 ระดับ (ม.4 → ม.5 → ม.6)** โดยชิ้นงานรายคาบในแต่ละภาคเรียนจะถูกสะสมและเชื่อมต่อกัน ดังนี้:
-
-1. **ม.4: รากฐานซอฟต์แวร์และฮาร์ดแวร์ (Foundation & Physical Computing)**
-   - *ม.4/1* สร้างคลัง Prompt, กติกาการใช้ AI, ชุดข้อมูล CSV ของห้อง และโปรแกรม Python ที่อ่าน/วิเคราะห์ CSV นั้นได้จริง
-   - *ม.4/2* นำ Python มาต่อยอดเป็น MicroPython บน ESP32 ประกอบวงจร เซ็นเซอร์ มอเตอร์ หุ่นยนต์ และฝึกโมเดล ML เบื้องต้น (Teachable Machine / scikit-learn) จนได้อุปกรณ์อัจฉริยะ/หุ่นยนต์ 1 ชิ้น
-2. **ม.5: ปัญญาประดิษฐ์เชิงลึกและระบบอัจฉริยะเชื่อมต่อเครือข่าย (AI Vision & AIoT)**
-   - *ม.5/1* ยกระดับจาก ML พื้นฐานสู่ Deep Learning, OpenCV, Transfer Learning (MobileNet) และ Object Detection (YOLO) จนได้ระบบ AI วิเคราะห์ภาพถ่ายที่รันผ่านเว็บแคม/แอปอย่างง่าย
-   - *ม.5/2* นำเซ็นเซอร์และ ESP32 มาเชื่อม Wi-Fi/HTTP/MQTT, Dashboard (Node-RED/Blynk/Grafana), โมเดลทำนายอนุกรมเวลา และ Edge AI + Fail-safe จนได้ระบบ Smart System ครบวงจร
-3. **ม.6: นวัตกรรมเพื่อธุรกิจและผู้ประกอบการ (Capstone Innovation & Entrepreneurship)**
-   - *ม.6/1* ผสานเทคโนโลยีจาก ม.4–ม.5 เข้ากับ AI for Business และ Design Thinking เพื่อวางแผนและพัฒนา **Capstone Project (Sprint 0–3)** จนได้ต้นแบบที่ทดสอบกับผู้ใช้จริง
-   - *ม.6/2* ต่อยอดต้นแบบเดิมใน Sprint 4–5 ให้เสถียร ปลอดภัย มีเอกสารและ README ครบถ้วน พร้อม Lean Canvas, ตารางการเงิน, Pitch Deck และ Portfolio สำหรับนำเสนอต่อคณะกรรมการ
+1. **ม.4:** ฝึก Prompt ผ่าน **Open WebUI (Ollama)** และเขียน Python บน **JupyterHub** วิเคราะห์ข้อมูลที่เก็บบน **NAS** → ต่อยอดเป็น **MicroPython บน ESP32-S3** คุม OLED, เซนเซอร์ และขับเคลื่อน **หุ่นยนต์ 4WD (TB6612FNG + Wheel Encoder)**
+2. **ม.5:** ใช้ **Webcam C270 + Label Studio + PyTorch + OpenCV** บน **RTX 3090 Server** สร้างระบบ AI Vision → ผสานกับ **DHT22, Capacitive Soil, Water Level, Rain Sensor, 2-Ch Relay, Water Pump** และ **Docker Dashboard** บน IoT VLAN จนได้ระบบ **Smart Farm / Smart Classroom** พร้อมตัวถังที่พิมพ์ด้วย **3D Printer**
+3. **ม.6:** ใช้ **Local Git Server + NAS + AI Server + 3D Printer** พัฒนา **Capstone Project** ตั้งแต่ Business/Design Thinking → Sprint 0–5 → ทดสอบผู้ใช้จริง → **Portfolio & Final Presentation** โดยข้อมูล 100% อยู่ภายในเครือข่ายโรงเรียน
 
 ---
 
 ## 4. ข้อสังเกตและข้อเสนอแนะ (Observations & Recommendations)
 
-จากการวิเคราะห์เอกสารต้นฉบับเพื่อนำมาแตกเป็นแผนการสอนรายคาบแบบ PBL พบประเด็นที่คลุมเครือหรือข้อจำกัดด้านเวลา ดังนี้:
-
-### ข้อสังเกตจากเอกสารต้นฉบับ (จุดที่คลุมเครือ / ข้อมูลไม่พอ)
-1. **เกณฑ์ประเมินและสัดส่วนคะแนนเฉพาะของโรงเรียน:** เอกสารระบุเพียงแนวทางแนะนำ (ชิ้นงาน/โครงงานปลายภาค 40%, ใบงานและปฏิบัติระหว่างเรียน 35%, ทดสอบ 15%, การทำงานเป็นทีมและความรับผิดชอบ 10%) แต่ไม่ได้กำหนดเกณฑ์ผ่านขั้นต่ำของแต่ละโรงเรียน จึงกำหนด Rubric ย่อระดับคาบเป็นคะแนนเต็ม 10 คะแนนต่อคาบไว้เป็นมาตรฐานกลาง `[เสริม]`
-2. **รุ่นอุปกรณ์และซอฟต์แวร์เฉพาะทาง:** เอกสารระบุเครื่องมือแบบกว้าง เช่น *"ESP32 (หรือ Arduino)"*, *"Node-RED/Blynk/Grafana"*, *"Streamlit/Gradio (ถ้ามีเวลา)"*, *"โปรแกรมทำสไลด์"*, *"เครื่องมือทำพอร์ตโฟลิโอ"* ในแผนรายคาบจึงเลือกตัวเลือกหลักที่ใช้งานได้ฟรีและเหมาะกับบริบทโรงเรียน (เช่น Google Colab, Google Sheets, MicroPython บน ESP32, Node-RED/Blynk, Streamlit/Gradio) โดยทำเครื่องหมาย `[เสริม]` ในจุดที่ระบุเจาะจง
-3. **คาบที่ระบุเป็น "แบบทดสอบย่อย" หรือ "อภิปรายกลุ่ม" ในเอกสาร:** เช่น ม.4/1 คาบที่ 5, 7, 36; ม.4/2 คาบที่ 5, 17; ม.5/1 คาบที่ 5, 17, 35; ม.5/2 คาบที่ 6, 18 เพื่อให้สอดคล้องกับเงื่อนไข *"ทุกคาบต้องจบด้วยโครงงานปลายคาบที่สร้างสิ่งที่ใช้ได้จริง"* จึงออกแบบให้ผู้เรียนสร้าง **ชิ้นงานที่ตรวจสอบและใช้งานได้จริง** ควบคู่กับการทบทวน/ทดสอบในคาบนั้น ๆ
-4. **ความไม่ชัดเจนของ Dataset และสภาพแวดล้อม GPU:** ม.5/1 ใช้ Google Colab (GPU) ซึ่งอาจมีข้อจำกัดเรื่องโควตา GPU ฟรีหรือความเร็วอินเทอร์เน็ตเมื่อใช้พร้อมกันทั้งห้อง และ ม.6/1–ม.6/2 ไม่ได้ระบุประเภทโครงงาน Capstone ตายตัว (ขึ้นอยู่กับโจทย์ของแต่ละทีม) จึงออกแบบโครงงานปลายคาบให้เป็น Template มาตรฐานที่ปรับใช้ได้กับทุกโจทย์ของทีม
-
-### ข้อเสนอแนะในการนำไปใช้จริง
-1. **เผื่อเวลาคาบสูญเสีย ~10%:** ตามที่เอกสารแนะนำ ทุกภาคเรียนมี *"ส่วนที่ตัดได้ถ้าเวลาไม่พอ"* ควรเตรียมแผนสำรองไว้สำหรับวันหยุดราชการหรือกิจกรรมโรงเรียน
-2. **จัดการอุปกรณ์เป็นชุด (Kit):** ในภาคเรียน ม.4/2 และ ม.5/2 ควรจัดกล่องอุปกรณ์ล่วงหน้าเป็นชุดละ 2 คน พร้อมป้ายชื่อกลุ่มและตรวจสอบสายไฟ/เซ็นเซอร์ก่อนเข้าคาบเพื่อไม่ให้เสียเวลาช่วงลงมือทำ 20–25 นาที
-3. **มีผู้ช่วยสอน (TA) ในคาบฮาร์ดแวร์และ Capstone:** คาบที่ต่อวงจรไฟฟ้า (ม.4/2), เชื่อมต่อระบบ AIoT (ม.5/2) และพัฒนา Capstone (ม.6) ควรมีผู้ช่วยสอน 1 คนต่อห้องตามคำแนะนำในเอกสาร เพื่อช่วยแก้ปัญหาเฉพาะหน้าให้ทันใน 50 นาที
+1. **การแทนที่เครื่องมือ Cloud ด้วย Local Tools ตาม BOQ:**
+   - แทนที่ *ChatGPT/Claude/Gemini* → **Ollama + Open WebUI** (โมเดล 7B–14B Quantized)
+   - แทนที่ *Google Colab / TensorFlow / Teachable Machine* → **JupyterHub + PyTorch (`torchvision` / Ultralytics YOLO) + OpenCV** บน RTX 3090
+   - แทนที่ *Google Drive / GitHub* → **NAS Storage (Synology DS223j)** และ **Local Git Server**
+   - แทนที่ *Google Workspace / Canva* (ซึ่งไม่ได้ระบุใน BOQ) → ใช้ซอฟต์แวร์ออฟฟิศแบบ Local/Offline บน Notebook นักเรียน (เช่น **LibreOffice Calc/Writer/Impress** หรือ **Markdown/Draw.io**) `[เสริม]` เพื่อคงหลักการปิดอินเทอร์เน็ตได้เมื่อจำเป็น
+2. **การบริหารคิว AI Server (RTX 3090 24GB):** ในคาบที่ใช้ Local LLM (ม.4/1) หรือฝึก PyTorch Vision (ม.5/1) ให้ใช้งานแบบ **5 กลุ่มปฏิบัติการ (กลุ่มละ 6 คน)** และจัดคิวรันงานตามที่ BOQ แนะนำ
+3. **ความปลอดภัยในห้องปฏิบัติการ:** งานบัดกรีด้วย Soldering Station ต้องควบคุมโดยครู พร้อมแว่นตานิรภัยและ Fume Extractor เสมอ และห้ามต่อไฟบ้าน 220V ในห้องเรียน (ใช้ Power Supply 12V DC ตาม BOQ เท่านั้น)
